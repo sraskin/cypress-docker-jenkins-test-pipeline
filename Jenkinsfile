@@ -1,7 +1,7 @@
 pipeline {
    agent {
-     node {
-     label 'shahriarkhan/myjenkinsagent:nodejs'
+     docker {
+       image 'cypress/browsers'
      }
    }
   stages {
