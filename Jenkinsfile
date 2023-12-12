@@ -1,4 +1,9 @@
 pipeline {
+   agent {
+     node {
+     label 'shahriarkhan/myjenkinsagent:nodejs'
+     }
+   }
   stages {
     stage('build') {
       steps {
