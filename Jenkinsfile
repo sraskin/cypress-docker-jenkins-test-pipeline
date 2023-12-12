@@ -1,19 +1,13 @@
 pipeline {
-  agent {
-    docker {
-      image 'cypress/base:20.9.0'
-    }
-  }
-
   stages {
     stage('build') {
       steps {
-        sh 'npm ci'
+        sh 'docker compose build'
       }
     }
     stage('test') {
       steps {
-        sh 'cypress:test_run'
+        sh 'docker compose up'
       }
     }
     stage('report') {
