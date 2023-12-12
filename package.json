@@ -1,0 +1,11 @@
+{
+    "name": "cypress_project",
+    "version": "1.0.0",
+    "description": "Cypress Jenkins Pipeline Integration",
+    "scripts": {
+        "cypress:test_run": "npx cypress run --spec 'cypress/e2e/specs/*.spec.js'"
+    },
+    "devDependencies": {
+        "cypress": "*"
+    }
+}

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  pol-process-automation-cypress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - docker.env
+    volumes:
+      - .:/app
