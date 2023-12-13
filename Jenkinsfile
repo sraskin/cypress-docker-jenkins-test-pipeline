@@ -7,7 +7,6 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'service docker start'
         sh 'docker compose build'
       }
     }
