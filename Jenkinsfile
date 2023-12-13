@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'docker ps'
+        sh 'service docker start'
       }
     }
     stage('test') {
