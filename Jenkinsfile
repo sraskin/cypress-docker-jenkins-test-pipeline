@@ -1,19 +1,18 @@
 pipeline {
    agent {
-     docker {
-       image 'cypress/browsers'
-       args '--privileged'
+     node {
+       label 'jenkins-agent-with-nodejs-docker'
      }
-   }
+  }
   stages {
     stage('build') {
       steps {
-        sh 'docker compose build'
+        sh 'docker -v'
       }
     }
     stage('test') {
       steps {
-        sh 'docker compose up'
+        sh 'docker info'
       }
     }
     stage('report') {
