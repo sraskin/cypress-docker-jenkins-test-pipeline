@@ -7,7 +7,10 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'ps aux | grep docker'
+        sh 'service docker stop'
+        sh 'mkdir -p /var/run/docker'
+        sh 'touch /var/run/docker.sock'
+        sh 'sudo service docker start'
       }
     }
     stage('test') {
