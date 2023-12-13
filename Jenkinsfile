@@ -7,12 +7,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'npm install'
+        sh 'docker ps'
       }
     }
     stage('run') {
       steps {
-        sh 'npx cypress run e2e'
+        sh 'docker info'
       }
     }
   }
