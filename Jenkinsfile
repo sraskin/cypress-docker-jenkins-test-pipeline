@@ -7,6 +7,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        sh 'systemctl unmask docker.service systemctl unmask docker.socket systemctl start docker.service'
         sh 'docker compose build'
       }
     }
