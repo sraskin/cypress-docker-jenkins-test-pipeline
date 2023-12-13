@@ -1,18 +1,18 @@
 pipeline {
    agent {
      node {
-       label 'jenkins-agent-with-nodejs-docker'
+       label 'jenkins-agent-with-nodejs'
      }
   }
   stages {
     stage('build') {
       steps {
-        sh 'service docker start'
+        sh 'npm install'
       }
     }
-    stage('test') {
+    stage('run') {
       steps {
-        sh 'docker info'
+        sh 'npx cypress run e2e'
       }
     }
   }
