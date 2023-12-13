@@ -7,13 +7,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'ls -l /var/run/docker.sock'
-        sh 'docker compose build'
+        sh 'env'
       }
     }
     stage('test') {
       steps {
-        sh 'docker compose up'
+        sh 'docker info'
       }
     }
   }
