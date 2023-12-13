@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'env'
+        sh 'ps aux | grep docker'
       }
     }
     stage('test') {
