@@ -7,17 +7,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'docker -v'
+        sh 'docker compose build'
       }
     }
     stage('test') {
       steps {
-        sh 'docker info'
-      }
-    }
-    stage('report') {
-      steps {
-        echo 'upload test results'
+        sh 'docker compose up'
       }
     }
   }
