@@ -1,10 +1,14 @@
 pipeline {
-  agent any
-
+   agent {
+     docker {
+       image 'cypress/browsers'
+       args '--privileged'
+     }
+   }
   stages {
     stage('build') {
       steps {
-        sh 'ls'
+        sh 'docker compose build'
       }
     }
     stage('test') {
